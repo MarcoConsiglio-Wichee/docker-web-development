@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
 
@@ -15,18 +15,11 @@
     
     <div class="container mt-3">
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col text-center">
-                <h1 class="display-1">Hello developer!</h1>
-                <p class="display-4">Write something awesome!</p>
-                <cite>Powered by</cite>
-                <div class="d-flex flex-row align-items-center justify-content-center">
-                    <img style="max-height:80px" src="img/php.png" class="">
-                    <img style="max-height:180px" src="img/mysql.png" class="mb-5">
-                    <img style="max-height:30px" src="img/nginx.png" class="">
-                </div>
+            <div class="col-md-3"></div>
+            <div class="col">
+                <?=phpinfo();?>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 
