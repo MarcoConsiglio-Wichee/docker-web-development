@@ -15,12 +15,14 @@ Tutto quello di cui hai bisogno per cominciare a sviluppare in PHP.
 4. Visita <http://127.0.0.1> per PHPINFO o <http://127.0.0.1/db_test.php>.
 5. Crea i tuoi script PHP in `app/public`.
 
-## Optional
-### xDebug
-Per utilizzare xDebug configura il file xdebug.ini inserendo il codice del tuo IDE.
+## Debug
+Per utilizzare xDebug configura il file `config/xdebug.ini` inserendo il codice del tuo IDE.
 - Visual Studio Code: `xdebug.idekey=VSCODE`
 - Netbeans: `xdebug.idekey=netbeans-xdebug`
 - Notepad++: `xdebug.idekey=xdebug`
 - PHP Storm: `xdebug.idekey=PHPSTORM`
 - Sublime Text 3: `xdebug.idekey=sublime.xdebug`
+
+La porta su cui sarà in ascolto il client è la `9001` anziché quella standard `9000`, per evitare
+che vada in conflitto con php-fpm. Pertanto bisogna istruire l'IDE di mettersi in ascolto sulla `9001`
 
