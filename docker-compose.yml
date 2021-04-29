@@ -1,27 +1,22 @@
 version: '3'
 services:
-    web:
-        image: nginx:latest
-        ports:
-            - "80:80"
-        volumes:
-            - ./config/nginx.conf:/etc/nginx/conf.d/nginx.conf
-            - ./app:/app
-        links:
-            - php
     php:
         build:
             context: .
             dockerfile: PHP.Dockerfile
+        container_name: php
         volumes:
             - ./config/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-            - ./app:/app
-        links:
-            - mysql
+            - ./app:/var/www/localhost/htdocs/
+        ports:
+            - 80:80
+        networks:
+            - app               
     mysql:
         image: mysql:8.0
         ports:
             - 3306:3306
+        container_name: mysql
         volumes:
             - ./mysql/:/var/lib/mysql
         environment:
@@ -30,3 +25,9 @@ services:
             MYSQL_PASSWORD: secret
             MYSQL_ROOT_PASSWORD: topsecret
         command: --default-authentication-plugin=mysql_native_password
+        networks:
+            - app
+
+networks: 
+    app:
+        name: app_network
